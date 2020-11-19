@@ -1,0 +1,9 @@
+{
+    "name": "SW Demo",
+    "short_name": "SW Demo",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "#9C27B0",
+    "background_color": "#EEE"
+}
