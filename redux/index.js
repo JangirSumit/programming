@@ -1,13 +1,15 @@
 const redux = require("redux");
 const {
-  INCREASE_BY_1,
-  INCREASE_BY_5,
-  DECREASE_BY_1,
-  DECREASE_BY_5,
-  RESET,
-  SEND_MESSAGE,
-} = require("./constants");
+  increaseBy1,
+  increaseBy5,
+  decreaseBy1,
+  decreaseBy5,
+  reset,
+  sendMessage,
+} = require("./actions");
 const reducer = require("./reducer");
+
+console.log(sendMessage);
 
 // Create Store
 const createStore = redux.createStore;
@@ -18,10 +20,10 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-store.dispatch({ type: INCREASE_BY_1 });
-store.dispatch({ type: INCREASE_BY_5 });
-store.dispatch({ type: RESET });
-store.dispatch({ type: DECREASE_BY_1 });
-store.dispatch({ type: DECREASE_BY_5 });
+store.dispatch(increaseBy1());
+store.dispatch(increaseBy5());
+store.dispatch(reset());
+store.dispatch(decreaseBy1());
+store.dispatch(decreaseBy5());
 
-store.dispatch({ type: SEND_MESSAGE, message: "Hello" });
+store.dispatch(sendMessage("Hello"));
