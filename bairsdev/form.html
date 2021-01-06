@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="name" id="name" />
+    <input type="email" name="email" id="email" />
+    <br />
+    <button id="submit">Submit</button>
+    <script>
+      document
+        .getElementById("submit")
+        .addEventListener("click", function (event) {
+          var name = document.getElementById("name");
+          var email = document.getElementById("email");
+
+          if (!name.value.length) {
+            name.style.border = "1px solid red";
+          } else {
+            name.style.border = "0";
+          }
+
+          if (!email.value.length && email.value.indexOf("@") > -1) {
+            email.style.border = "1px solid red";
+          }
+        });
+    </script>
+  </body>
+</html>

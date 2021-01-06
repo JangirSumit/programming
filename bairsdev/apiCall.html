@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .inner {
+        width: 300px;
+        height: 400px;
+        background-color: #d3d3d3;
+        margin: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper"></div>
+    <script>
+      window.addEventListener("load", function (event) {
+        fetch("https://jsonplaceholder.typicode.com/todos")
+          .then((response) => response.json())
+          .then((json) => {
+            if (json && json.length) {
+              var data = json.slice(0, 5);
+              console.log(data);
+              var todoTiles = "";
+
+              data.forEach((d) => {
+                todoTiles += `<div class="inner"><h3>${d.title}</h3><p>${d.completed}</p></div>`;
+              });
+
+              document.getElementsByClassName(
+                "wrapper"
+              )[0].innerHTML = todoTiles;
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

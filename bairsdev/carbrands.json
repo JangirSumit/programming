@@ -1,0 +1,23 @@
+[
+    {
+        "brand": "BMW",
+        "models": [
+            "x1",
+            "x3"
+        ]
+    },
+    {
+        "brand": "Mercedes-Benz",
+        "models": [
+            "A-class",
+            "S-class"
+        ]
+    },
+    {
+        "brand": "Land Rover",
+        "models": [
+            "Range Rover",
+            "Discovery"
+        ]
+    }
+]

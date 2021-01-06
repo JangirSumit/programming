@@ -1,0 +1,6 @@
+1. Discard (_)
+2. Pattern matching (Switch statement)
+3. async main and return types can be void, ValueTask
+4. Tuples without name
+5. default value with default keyword only
+6. Pattern matching with generics
