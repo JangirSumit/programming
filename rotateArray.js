@@ -3,7 +3,7 @@ function solution(A, K) {
     return A;
   }
   for (let i = 0; i < K; i++) {
-    A.unshift(A.pop());
+    A.push(A.shift());
   }
   return A;
 }
