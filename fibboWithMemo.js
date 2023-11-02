@@ -25,12 +25,13 @@ function memoize(fn) {
   var cache = {};
 
   return function (item) {
+    const key = JSON.stringify(item);
     if (cache[item]) {
-      console.log("From Cache ", item);
-      return parseInt(cache[item]);
+      //console.log("From Cache ", item);
+      return cache[item];
     } else {
       result = fn(item);
-      cache[item] = parseInt(result);
+      cache[item] = result;
       return result;
     }
   };
@@ -44,5 +45,6 @@ const memoFibbo = memoize((n) => {
   return memoFibbo(n - 1) + memoFibbo(n - 2);
 });
 
-console.log(memoFibbo(10));
-console.log(memoFibbo(11));
+for (let i = 0; i <= 10; i++) {
+  console.log(memoFibbo(i));
+}

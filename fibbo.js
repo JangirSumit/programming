@@ -6,4 +6,6 @@ function fibbo(n) {
   return fibbo(n - 1) + fibbo(n - 2);
 }
 
-console.log(fibbo(10));
+for (let i = 0; i <= 10; i++) {
+  console.log(fibbo(i));
+}
