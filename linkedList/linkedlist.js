@@ -82,7 +82,14 @@ function LinkedList() {
   };
 
   this.reverse = () => {
+    if (this.head == null || this.head.next == null) {
+      return;
+    }
+
     let head = this.head;
+    let pointer = this.head.next;
+
+    
   };
 
   this.addAtFirst = (val) => {
@@ -147,3 +154,5 @@ console.log(linkedList.size());
 linkedList.deleteAt(5);
 linkedList.print();
 console.log(linkedList.size());
+linkedList.reverse();
+linkedList.print();
