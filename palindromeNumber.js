@@ -1,6 +1,10 @@
 // Check whether a given number is palindrome or not
 
 function isPalindrome(num) {
+  if (num >= 4294967296 || num <= -4294967295) {
+    return 0
+  }
+
   let newNum = 0;
   let passedNum = num;
   while (num > 0) {
@@ -15,4 +19,3 @@ function isPalindrome(num) {
 console.log(isPalindrome(121));
 console.log(isPalindrome(122));
 console.log(isPalindrome(1222332221));
-
