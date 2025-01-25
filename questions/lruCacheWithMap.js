@@ -7,7 +7,7 @@ var LRUCache = function (capacity) {
   LRUCache.prototype.get = function (key) {
     if (this.cache.has(key)) {
       let value = this.cache.get(key);
-      this.cache.delete(key);
+      this.cache.delete(key); // delete and reinsert to make it most recently used
       this.cache.set(key, value);
       return value;
     }

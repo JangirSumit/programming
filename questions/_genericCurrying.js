@@ -26,3 +26,6 @@ const curriedSum = genericCurry(sum);
 console.log(curriedSum(1, 2)(3));
 console.log(curriedSum(1)(2)(3));
 console.log(curriedSum(1)(2, 3));
+
+
+

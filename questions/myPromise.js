@@ -39,4 +39,18 @@ var promise = new MyPromise(function (resolve, reject) {
   }, 3000);
 }).then((result) => {
   console.log(result);
+}).catch((err) => {
+  console.log(err);
+});
+
+
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("callback...");
+    resolve("Done");
+  }, 3000);
+}).catch((err) => {
+  console.log(err);
+}).then((result) => {
+  console.log(result);
 });

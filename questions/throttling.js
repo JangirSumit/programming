@@ -1,4 +1,4 @@
-function throttle(fn, delay) {
+function throttling(fn, delay) {
   let lastCall = 0;
   return function (...args) {
     let current = new Date().getTime();
@@ -6,6 +6,20 @@ function throttle(fn, delay) {
     if (current - lastCall > delay) {
       lastCall = current;
       fn.apply(context, args);
+    }
+  };
+}
+
+function throttle(fn, delay) {
+  let inThrottle = false;
+  return function (...args) {
+    if (!inThrottle) {
+      inThrottle = true;
+      fn.apply(this, args);
+
+      setTimeout(() => {
+        inThrottle = false;
+      }, delay);
     }
   };
 }
