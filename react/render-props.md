@@ -228,3 +228,66 @@ const App = () => (
 - Consider alternatives like custom hooks for simpler and more modern approaches in function components.
 
 Would you like to explore examples combining render props with state management libraries like Redux or Zustand? 😊
+
+-----------------------------------------
+
+
+### **🔹 React Render Props**
+Render props is a pattern in React where a component takes a function as a prop and calls it to render UI dynamically. This helps in **code reusability** and **logic sharing** between components.
+
+---
+
+## **🛠 Example: Mouse Tracker (Sharing State)**
+Here’s a **render props** example where a `MouseTracker` component tracks the mouse position and shares it with another component via a function.
+
+### **1️⃣ Create the MouseTracker Component**
+```jsx
+import React, { useState } from "react";
+
+const MouseTracker = ({ render }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event) => {
+    setPosition({ x: event.clientX, y: event.clientY });
+  };
+
+  return <div style={{ height: "100vh" }} onMouseMove={handleMouseMove}>
+    {render(position)}
+  </div>;
+};
+
+export default MouseTracker;
+```
+- `MouseTracker` tracks the mouse position.
+- Instead of rendering UI itself, it calls the `render` function prop.
+
+---
+
+### **2️⃣ Use `MouseTracker` in Another Component**
+```jsx
+import React from "react";
+import MouseTracker from "./MouseTracker";
+
+const App = () => {
+  return (
+    <MouseTracker
+      render={(position) => (
+        <h1>Mouse Position: {position.x}, {position.y}</h1>
+      )}
+    />
+  );
+};
+
+export default App;
+```
+- Here, `render` is a function that receives `position` and returns JSX.
+- The `MouseTracker` component controls **when and how** the function is called.
+
+---
+
+## **🎯 When to Use Render Props?**
+✅ When multiple components need **shared logic** (e.g., tracking, fetching, subscriptions).  
+✅ When using **HOCs (Higher Order Components) becomes complex**.  
+✅ When needing **more control over what gets rendered**.  
+
+Would you like an example for handling API data using Render Props? 🚀
