@@ -10,6 +10,18 @@
 
 # production
 /build
+/.vs
+/.vscode
+/.idea
+/.DS_Store
+/Code/.vs
+/Code/.vscode
+/Code/.idea
+/Code/.DS_Store
+/Code/bin
+/Code/build
+/Code/node_modules
+/code/obj
 
 # misc
 .DS_Store

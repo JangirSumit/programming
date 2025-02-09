@@ -1,5 +1,4 @@
-```CSharp
-namespace Practise.DesignPatterns.Creational;
+﻿namespace Practise.DesignPatterns.Creational;
 
 internal class AbstractFactory
 {
@@ -71,4 +70,3 @@ internal class AbstractFactory
         }
     }
 }
-```
