@@ -4,16 +4,10 @@
 public enum Suit { Heart, Diamond, spade, Club }
 public enum Rank { Two = 2, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace }
 
-public class Card
+public class Card(Suit suit, Rank rank)
 {
-    public Suit Suit { get; set; }
-    public Rank Rank { get; set; }
-
-    public Card(Suit suit, Rank rank)
-    {
-        Suit = suit;
-        Rank = rank;
-    }
+    public Suit Suit { get; set; } = suit;
+    public Rank Rank { get; set; } = rank;
 
     public override string ToString() => $"{Rank} of {Suit}";
 }
