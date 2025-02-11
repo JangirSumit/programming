@@ -1,9 +1,12 @@
 ﻿using System.Diagnostics;
+using Microsoft.Extensions.Caching.Memory;
 using Practise;
 using Practise.Programming;
 
 internal class Program
 {
+    private readonly IMemoryCache memoryCache;
+
     private static void Main(string[] args)
     {
         while (true)
